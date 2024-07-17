@@ -21,11 +21,11 @@ namespace Entity
         public DateTime DataDevolucaoReal { get; set; }
         public decimal Multa { get; set; }
 
-        public static explicit operator AluguelViewModel(AluguelEntity source)
+        public static explicit operator AluguelModel(AluguelEntity source)
         {
             if (source != null)
             {
-                return new AluguelViewModel()
+                return new AluguelModel()
                 {
                     DataAluguel = source.DataAluguel,
                     DataDevolucaoPrevista = source.DataDevolucaoPrevista

@@ -18,11 +18,11 @@ namespace Entity
         public int Id_Jogo { get; set; }
         public DateTime DataVenda { get; set; }
 
-        public static explicit operator VendaViewModel(VendaEntity source)
+        public static explicit operator VendaModel(VendaEntity source)
         {
             if (source != null)
             {
-                return new VendaViewModel()
+                return new VendaModel()
                 {
                     DataVenda = source.DataVenda
                 };

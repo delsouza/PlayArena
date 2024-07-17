@@ -7,13 +7,15 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class ClienteViewModel
+    public class JogoModel
     {
         [Key]
         public int Id { get; set; }
         public string Nome { get; set; } = string.Empty;
-        public string Endereco { get; set; } = string.Empty;
-        public int Telefone { get; set; }
-        public string Email { get; set; } = string.Empty;
+        public string Empresa { get; set; } = string.Empty;
+        public string Genero { get; set; } = string.Empty;
+        public int QuantidadeDisponivel { get; set; }
+        public DateTime DataLancamento { get; set; }
+        public decimal Preco { get; set; }
     }
 }

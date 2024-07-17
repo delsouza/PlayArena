@@ -21,11 +21,11 @@ namespace Entity
         public DateTime DataLancamento { get; set; }
         public decimal Preco { get; set; }
 
-        public static explicit operator JogoViewModel(JogoEntity source)
+        public static explicit operator JogoModel(JogoEntity source)
         {
             if (source != null)
             {
-                return new JogoViewModel()
+                return new JogoModel()
                 {
                     Nome = source.Nome,
                     Empresa = source.Empresa,
