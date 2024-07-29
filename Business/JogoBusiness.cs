@@ -40,6 +40,5 @@ namespace Business
 
                 return (JogoModel)jogo;
             }
-        
-    }
+        }
 }

@@ -17,5 +17,6 @@ namespace Models
         public int QuantidadeDisponivel { get; set; }
         public DateTime DataLancamento { get; set; }
         public decimal Preco { get; set; }
+        public string Capa { get; set; }
     }
 }

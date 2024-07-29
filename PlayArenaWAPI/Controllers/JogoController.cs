@@ -15,11 +15,13 @@ namespace PlayArenaWAPI.Controllers
         }
 
         [HttpGet]
+        [Route("api/jogo/listar")]
         public ActionResult ListarJogo() 
         {
             List<JogoModel> jogos =  _jogoBusiness.ListarJogo();
             return Ok(jogos);
         }
 
+        
     } 
 }

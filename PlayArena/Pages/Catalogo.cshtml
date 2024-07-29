@@ -1,6 +1,36 @@
 ﻿@page
 @model PlayArena.Pages.CatalogoModel
 @{
+
 }
 
-
+<div class="py-5">
+    <div class="container">
+        <div class="text-lg-start mb-5">
+           
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2  row-cols-md-3 g-0">
+            @if (Model.listajogo != null)
+            {
+                @foreach (var jogo in Model.listajogo)
+                {
+                    <a class="card-link text-decoration-none" asp-page="./Jogo">
+                        <div class="card mx-3 my-3 p-2" style="width: 12rem">
+                             @if (jogo.Capa != null)
+                            {
+                                <img src="~/img/@jogo.Capa" class="card-img-top" style="width: 175px; height: 150px" /> 
+                            }
+                            else
+                            {
+                                <img src="..." class="card-img-top" />
+                            }
+                            <div class="card-body">
+                                <h5 class="card-title">@jogo.Nome</h5>
+                            </div>   
+                        </div>  
+                    </a>
+                }
+            }
+        </div>
+    </div>
+</div>    
