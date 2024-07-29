@@ -19,11 +19,11 @@ namespace Entity
         public int Telefone { get; set; }
         public string Email { get; set; } = string.Empty;
 
-        public static explicit operator ClienteViewModel(ClienteEntity source)
+        public static explicit operator ClienteModel(ClienteEntity source)
         {
             if (source != null)
             {
-                return new ClienteViewModel()
+                return new ClienteModel()
                 {
                     Nome = source.Nome,
                     Endereco = source.Endereco,

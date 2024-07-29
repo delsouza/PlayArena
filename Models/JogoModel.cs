@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class JogoViewModel
+    public class JogoModel
     {
         [Key]
         public int Id { get; set; }
@@ -17,5 +17,6 @@ namespace Models
         public int QuantidadeDisponivel { get; set; }
         public DateTime DataLancamento { get; set; }
         public decimal Preco { get; set; }
+        public string Capa { get; set; }
     }
 }

@@ -20,19 +20,22 @@ namespace Entity
         public int QuantidadeDisponivel { get; set; }
         public DateTime DataLancamento { get; set; }
         public decimal Preco { get; set; }
+        public string Capa { get; set; }
 
-        public static explicit operator JogoViewModel(JogoEntity source)
+        public static explicit operator JogoModel(JogoEntity source)
         {
             if (source != null)
             {
-                return new JogoViewModel()
+                return new JogoModel()
                 {
+                    Id = source.Id,
                     Nome = source.Nome,
                     Empresa = source.Empresa,
                     Genero = source.Genero,
                     QuantidadeDisponivel = source.QuantidadeDisponivel,
                     DataLancamento = source.DataLancamento,
-                    Preco = source.Preco
+                    Preco = source.Preco,
+                    Capa = source.Capa
                 };
             }
             else

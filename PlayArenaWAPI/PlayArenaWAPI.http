@@ -1,0 +1,6 @@
+@PlayArenaWAPI_HostAddress = http://localhost:5150
+
+GET {{PlayArenaWAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

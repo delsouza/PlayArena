@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Entity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Models;
 using System;
@@ -18,10 +19,10 @@ namespace Infra.Context
             _configuration = configuration;
         }
 
-        public DbSet<ClienteViewModel> Cliente { get; set; }
-        public DbSet<AluguelViewModel> Aluguel { get; set; }
-        public DbSet<VendaViewModel> Venda { get; set; }
-        public DbSet<JogoViewModel> Jogo { get; set; }
+        public DbSet<ClienteEntity> Cliente { get; set; }
+        public DbSet<AluguelEntity> Aluguel { get; set; }
+        public DbSet<VendaEntity> Venda { get; set; }
+        public DbSet<JogoEntity> Jogo { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

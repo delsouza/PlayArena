@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class ClienteViewModel
+    public class ClienteModel
     {
         [Key]
         public int Id { get; set; }

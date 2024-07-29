@@ -3,10 +3,6 @@ using Infra.UnitOfWork;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
-
-builder.Services.AddDbContext<ApplicationDbContext>();
-
 // Add services to the container.
 builder.Services.AddRazorPages();
 
