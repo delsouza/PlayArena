@@ -7,21 +7,34 @@ namespace PlayArena.Pages
 {
     public class CatalogoModel : PageModel
     {
-        public List<JogoModel> listajogo  { get; set; }
+        public List<JogoModel> listajogo { get; set; }
 
-        public async void OnGetAsync()
+        public CatalogoModel()
         {
-            var client = new HttpClient();
+            listajogo = new List<JogoModel>();
+        }
 
-            var url = "https://localhost:7106/api/Jogo/api/jogo/listar";
+        public async Task<IActionResult> OnGetAsync()
+        {
+            try
+            {
+                var client = new HttpClient();
 
-            var resposta = await client.GetAsync(url);
+                var url = "https://localhost:7106/api/Jogo/api/jogo/listar";
 
-            resposta.EnsureSuccessStatusCode();
+                var resposta = await client.GetAsync(url);
 
-            var conteudo = await resposta.Content.ReadAsStringAsync();
+                var conteudo = await resposta.Content.ReadAsStringAsync();
 
-            listajogo = JsonSerializer.Deserialize<List<JogoModel>>(conteudo);
+                listajogo = JsonSerializer.Deserialize<List<JogoModel>>(conteudo);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return Page();
         }
     }
 }

@@ -184,3 +184,14 @@ h2 {
     background-color: #152232;
 }
 
+.cardscatalogo {
+    color: #516170;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.cardscatalogo:hover {
+    color: #516170;
+}
+
+
