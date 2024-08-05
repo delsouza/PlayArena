@@ -34,5 +34,8 @@ namespace Models
         [JsonPropertyName("capa")]
 
         public string Capa { get; set; }
-    }
+
+		[JsonPropertyName("descricao")]
+		public string Descricao { get; set; }
+	}
 }

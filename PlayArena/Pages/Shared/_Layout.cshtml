@@ -15,15 +15,16 @@
                 <div class="d-flex align-items-center">
                     <a class="navbar-brand fw-bold" asp-area="" asp-page="/Index" style="color: #C9D7E3;">PlayArena</a>
                     <img src="~/img/codicon--game.svg" />
-                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                    <a class="navbar-brand catalogo-palavra ms-4" asp-area="" asp-page="/Catalogo" style="color: #C9D7E3;">Catálogo</a>
+                    <img src="~/img/carbon--catalog.png" />
                 </div>
                 <div class="d-flex justify-content-end align-items-center">
                     <a class="btn-login" asp-page="./login"> Login</a>
-                    <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center me-2">
                         <img src="~/img/material-symbols--login.svg" class="ms-2" width="24" height="24" />
                     </div>
                     <a class="btn-cadastro" asp-page="./cadastro"> Cadastro</a>
@@ -37,13 +38,16 @@
             @RenderBody()
         </main>
     </div>
-
-     
-    <footer class="border-top footer text-muted">
-        <div class="footer-paginas text-white ps-2">
-            &copy; 2024 - PlayArena - Jogue, explore, divirta-se!
+    
+    <footer class="border-top footer text-muted d-flex justify-content-between footer-paginas-pai">
+        <div class="footer-paginas text-white ps-2 fw-bold">
+            Jogue, explore, divirta-se!
+            <img src="~/img/codicon--game.svg" class="p-1 pb-2" />
         </div>
-    </footer> 
+        <div class="text-end fw-bold footer-paginas text-white pe-2 ">
+            Terms & Privacy   Contact   All rights reserved ©
+        </div>
+    </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
