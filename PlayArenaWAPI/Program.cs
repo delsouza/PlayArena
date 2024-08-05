@@ -17,6 +17,10 @@ builder.Services.AddTransient<IJogoBusiness, JogoBusiness>();
 
 builder.Services.AddTransient<IPlayArenaDAO, PlayArenaDAO>();
 
+builder.Services.AddTransient<IRequisitoSistemaBusiness, RequisitoSistemaBusiness>();
+
+builder.Services.AddTransient<IRequisitoSistemaDAO, RequisitoSistemaDAO>();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

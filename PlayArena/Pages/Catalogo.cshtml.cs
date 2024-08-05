@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Models;
+using PlayArenaWAPI.Controllers;
 using System.Text.Json;
 
 namespace PlayArena.Pages

@@ -21,8 +21,9 @@ namespace Entity
         public DateTime DataLancamento { get; set; }
         public decimal Preco { get; set; }
         public string Capa { get; set; }
+		public string Descricao { get; set; }
 
-        public static explicit operator JogoModel(JogoEntity source)
+		public static explicit operator JogoModel(JogoEntity source)
         {
             if (source != null)
             {
@@ -35,7 +36,8 @@ namespace Entity
                     QuantidadeDisponivel = source.QuantidadeDisponivel,
                     DataLancamento = source.DataLancamento,
                     Preco = source.Preco,
-                    Capa = source.Capa
+                    Capa = source.Capa,
+                    Descricao=source.Descricao
                 };
             }
             else

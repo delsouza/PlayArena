@@ -1,0 +1,15 @@
+﻿@page 
+@using Models
+@model PlayArena.Pages.TelajogoModel
+@{
+	var jogo = Model.jogo;
+}
+
+<div class="justify-content-lg-start d-flex">
+	<img class="fotovoltar mt-5 me-1" src="~/img/weui--back-filled.png" width="14" height="20" />
+	<a class="btnvoltar" asp-page="./Catalogo"> Voltar</a>
+</div>
+
+<img src="@jogo.Capa" class="" style="width: 170px; height: 200px" />
+
+<p>@jogo.Descricao</p>

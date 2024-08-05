@@ -72,7 +72,7 @@ h1 {
 
 h2 {
     font-weight: bold;
-    color: #404E5C;
+    color: #3c4753;
     font-size: 40px;
 }
 
@@ -96,13 +96,13 @@ h2 {
     background-color: #EDF1F5;
     border-radius: 5px;
     border: none;
-    padding-right: 20px;
-    padding-bottom: 7px;
+    margin-bottom: 7px;
+    padding:5px;
 }
 
-    .input-search:focus {
-        outline: none;
-    }
+.input-search:focus {
+    outline: none;
+}
 
 .btn-confira {
     background-color: #3577FF;
@@ -130,13 +130,6 @@ h2 {
 .container-pai{
     height:80vh;
 }
-
-/*p {
-    font-weight: bold;
-    color: #404E5C;
-    font-size: 25px;
-    text-align:center;
-}*/
 
 .titulo-login-cadastro {
     font-weight: bold;
@@ -182,6 +175,11 @@ h2 {
 
 .footer-paginas {
     background-color: #152232;
+    cursor: pointer;
+}
+
+.footer-paginas-pai {
+    background-color: #152232;
 }
 
 .cardscatalogo {
@@ -194,4 +192,22 @@ h2 {
     color: #516170;
 }
 
+.catalogo-palavra{
+    font-weight:500;
+}
 
+.btnvoltar {
+    font-weight: bold;
+    color: #516170;
+    font-size: 18px;
+    text-decoration:none;
+    margin-top:38px;
+}
+
+.btnvoltar:hover {
+    color: #516170;
+}
+
+.fotovoltar{
+    margin-left:150px;
+}
