@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAO.Interface
 {
-    public interface IPlayArenaDAO : IBaseDAO<JogoEntity>
-    {
-    }
+	public interface IImagemJogoDAO : IBaseDAO<ImagemJogoEntity>
+	{
+	}
 }

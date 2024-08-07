@@ -23,8 +23,10 @@ namespace Infra.Context
         public DbSet<AluguelEntity> Aluguel { get; set; }
         public DbSet<VendaEntity> Venda { get; set; }
         public DbSet<JogoEntity> Jogo { get; set; }
+		public DbSet<RequisitoEntity> RequisitoSistema { get; set; }
+        public DbSet<ImagemJogoEntity> ImagemJogo { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {

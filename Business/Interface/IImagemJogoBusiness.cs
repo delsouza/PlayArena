@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Business.Interface
 {
-	public interface IRequisitoSistemaBusiness
+	public interface IImagemJogoBusiness
 	{
-		//public List<RequisitoModel> ListarRequisitoSistema(int Id);
-		public RequisitoModel ObterRequisitoPorIdJogo(int id);
+		public ImagemJogoModel ObterImagemJogoPorId(int id);
 	}
 }

@@ -9,13 +9,17 @@ namespace PlayArena.Pages
     public class TelajogoModel : PageModel
     {
 		public JogoModel jogo { get; set; }
+		public RequisitoModel requisitos { get; set; }
+		public ImagemJogoModel imagemJogo { get; set; }
 
 		[BindProperty]
         public int Id { get; set; }
 
-        public TelajogoModel()
+		public TelajogoModel()
 		{
 			jogo = new JogoModel();
+			requisitos = new RequisitoModel();
+			imagemJogo = new ImagemJogoModel();
 		}
 
 		public async Task<IActionResult> OnGetAsync(int Id)
@@ -30,40 +34,33 @@ namespace PlayArena.Pages
 
 				var conteudo = await resposta.Content.ReadAsStringAsync();
 
-				//aa
+				jogo = JsonSerializer.Deserialize<JogoModel>(conteudo);
 
-				//jogo = JsonSerializer.Deserialize<JogoModel>(conteudo);
+				var clientRequisito = new HttpClient();
 
-				//var client = new HttpClient();
+				var urlRequisito = $"https://localhost:7106/api/Jogo/api/jogo/RequisitoSistema/{Id}";
 
-				//var url = $"https://localhost:7106/api/Jogo/api/jogo/listar/{Id}";
+				var respostaRequisito = await client.GetAsync(urlRequisito);
 
-				//var resposta = await client.GetAsync(url);
+				var conteudoRequisito = await respostaRequisito.Content.ReadAsStringAsync();
 
-				//var conteudo = await resposta.Content.ReadAsStringAsync();
+				requisitos = JsonSerializer.Deserialize<RequisitoModel>(conteudoRequisito);
 
-				//jogo = JsonSerializer.Deserialize<JogoModel>(conteudo);
+				var clientImagem = new HttpClient();
 
-				//aa
+				var urlImagem = $"https://localhost:7106/api/Jogo/api/imagem/ImagemJogo/{Id}";
 
-				//var client = new HttpClient();
+				var respostaImagem = await client.GetAsync(urlImagem);
 
-				//var url = $"https://localhost:7106/api/Jogo/api/jogo/listar/{Id}";
+				var conteudoImagem = await respostaImagem.Content.ReadAsStringAsync();
 
-				//var resposta = await client.GetAsync(url);
-
-				//var conteudo = await resposta.Content.ReadAsStringAsync();
-
-				//jogo = JsonSerializer.Deserialize<JogoModel>(conteudo);
+				imagemJogo = JsonSerializer.Deserialize<ImagemJogoModel>(conteudoImagem);
 			}
 			catch (Exception)
 			{
 
 				throw;
 			}
-
-
-
 			return Page();
 		}
 	}

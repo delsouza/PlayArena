@@ -19,23 +19,23 @@ namespace Business
 			_requisitoSistemaDAO = requisitoSistemaDAO;
 		}
 
-		public List<RequisitoModel> ListarRequisitoSistema(int Id)
+		//public List<RequisitoModel> ListarRequisitoSistema(int Id)
+		//{
+		//	var list = new List<RequisitoModel>();
+		//	var listaentity = _requisitoSistemaDAO.Listar();
+		//	foreach (var requisito in listaentity)
+		//	{
+		//		var requisitoCasting = (RequisitoModel)requisito;
+		//		list.Add(requisitoCasting);
+
+		//	}
+		//	return list;
+
+		//}
+
+		public RequisitoModel ObterRequisitoPorIdJogo(int idJogo)
 		{
-			var list = new List<RequisitoModel>();
-			var listaentity = _requisitoSistemaDAO.Listar();
-			foreach (var requisito in listaentity)
-			{
-				var requisitoCasting = (RequisitoModel)requisito;
-				list.Add(requisitoCasting);
-
-			}
-			return list;
-
-		}
-
-		public RequisitoModel ObterRequisitoPorId(int id)
-		{
-			var requisito = _requisitoSistemaDAO.ListarPor(x => x.Id == id).FirstOrDefault();
+			var requisito = _requisitoSistemaDAO.ListarPor(x => x.Id == idJogo).FirstOrDefault();
 
 			return (RequisitoModel)requisito;
 		}
