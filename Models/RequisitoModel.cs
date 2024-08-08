@@ -13,8 +13,6 @@ namespace Models
 		[Key]
 		[JsonPropertyName("id")]
 		public int Id { get; set; }
-
-		[JsonPropertyName("id_jogo")]
 		public int Id_Jogo { get; set; }
 		[JsonPropertyName("processador")]
 		public string Processador { get; set; } = string.Empty;

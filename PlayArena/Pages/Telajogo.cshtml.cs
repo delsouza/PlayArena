@@ -1,13 +1,19 @@
+using DAO.Interface;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Models;
 using PlayArenaWAPI.Controllers;
 using System.Text.Json;
+using Business.PlayArena.Interface;
 
 namespace PlayArena.Pages
 {
     public class TelajogoModel : PageModel
     {
+		private readonly IRequisitoSistemaBusiness _requisitoSistemaBusiness;
+		private readonly IImagemJogoBusiness _imagemJogoBusiness;
+		private readonly IJogoBusiness _jogoBusiness;
+
 		public JogoModel jogo { get; set; }
 		public RequisitoModel requisitos { get; set; }
 		public ImagemJogoModel imagemJogo { get; set; }
@@ -15,46 +21,33 @@ namespace PlayArena.Pages
 		[BindProperty]
         public int Id { get; set; }
 
-		public TelajogoModel()
+		public TelajogoModel(IRequisitoSistemaBusiness requisitoSistemaBusiness, IImagemJogoBusiness imagemJogoBusiness, IJogoBusiness jogoBusiness)
 		{
 			jogo = new JogoModel();
 			requisitos = new RequisitoModel();
 			imagemJogo = new ImagemJogoModel();
+			_requisitoSistemaBusiness = requisitoSistemaBusiness;
+			_imagemJogoBusiness = imagemJogoBusiness;
+			_jogoBusiness = jogoBusiness;
 		}
 
 		public async Task<IActionResult> OnGetAsync(int Id)
 		{
 			try
 			{
-				var client = new HttpClient();
+				requisitos = _requisitoSistemaBusiness.ObterRequisitoPorIdJogo(Id);
+				imagemJogo = _imagemJogoBusiness.ObterImagemJogoPorId(Id);
+				jogo = _jogoBusiness.ObterJogoPorId(Id);
 
-                var url = $"https://localhost:7106/api/Jogo/api/jogo/listar/{Id}";
-				
-				var resposta = await client.GetAsync(url);
+				//var client = new HttpClient();
 
-				var conteudo = await resposta.Content.ReadAsStringAsync();
+				//var url = $"https://localhost:7106/api/Jogo/api/jogo/listar/{Id}";
 
-				jogo = JsonSerializer.Deserialize<JogoModel>(conteudo);
+				//var resposta = await client.GetAsync(url);
 
-				var clientRequisito = new HttpClient();
+				//var conteudo = await resposta.Content.ReadAsStringAsync();
 
-				var urlRequisito = $"https://localhost:7106/api/Jogo/api/jogo/RequisitoSistema/{Id}";
-
-				var respostaRequisito = await client.GetAsync(urlRequisito);
-
-				var conteudoRequisito = await respostaRequisito.Content.ReadAsStringAsync();
-
-				requisitos = JsonSerializer.Deserialize<RequisitoModel>(conteudoRequisito);
-
-				var clientImagem = new HttpClient();
-
-				var urlImagem = $"https://localhost:7106/api/Jogo/api/imagem/ImagemJogo/{Id}";
-
-				var respostaImagem = await client.GetAsync(urlImagem);
-
-				var conteudoImagem = await respostaImagem.Content.ReadAsStringAsync();
-
-				imagemJogo = JsonSerializer.Deserialize<ImagemJogoModel>(conteudoImagem);
+				//jogo = JsonSerializer.Deserialize<JogoModel>(conteudo);
 			}
 			catch (Exception)
 			{

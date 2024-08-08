@@ -1,5 +1,5 @@
 ﻿using Business;
-using Business.Interface;
+using Business.PlayArenaWAPI.Interface;
 using DAO.Interface;
 using Microsoft.AspNetCore.Mvc;
 using Models;
@@ -36,14 +36,6 @@ namespace PlayArenaWAPI.Controllers
             return Ok(jogo);
         }
 
-        //[HttpGet]
-		//[Route("api/jogo/{Id}/RequisitoSistema")]
-		//public ActionResult ListarRequisitoSistema(int Id)
-		//{
-		//	List<RequisitoModel> Requisito = _requisitoSistemaBusiness.ListarRequisitoSistema(Id);
-		//	return Ok(Requisito);
-		//}
-
 		[HttpGet]
 		[Route("api/jogo/RequisitoSistema/{Id}")]
 		public ActionResult ObterRequisitoPorId(int Id)
@@ -53,7 +45,7 @@ namespace PlayArenaWAPI.Controllers
 		}
 
 		[HttpGet]
-		[Route("api/imagem/ImagemJogo/{Id}")]
+		[Route("api/jogo/ImagemJogo/{Id}")]
 		public ActionResult ObterImagemPorId(int Id)
 		{
 			ImagemJogoModel Imagem = _imagemJogoBusiness.ObterImagemJogoPorId(Id);

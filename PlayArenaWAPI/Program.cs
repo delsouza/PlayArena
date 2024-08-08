@@ -1,9 +1,9 @@
-using Business.Interface;
-using Business;
 using DAO.Interface;
 using DAO;
 using Infra.Context;
 using Infra.UnitOfWork;
+using Business.PlayArenaWAPI.Interface;
+using Business.PlayArenaWAPI;
 
 var builder = WebApplication.CreateBuilder(args);
 

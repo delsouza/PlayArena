@@ -1,10 +1,18 @@
 using Infra.Context;
 using Infra.UnitOfWork;
+using Business.PlayArena.Interface;
+using Business.PlayArena;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddTransient<IRequisitoSistemaBusiness, RequisitoSistemaBusiness>();
+
+builder.Services.AddTransient<IImagemJogoBusiness, ImagemJogoBusiness>();
+
+builder.Services.AddTransient<IJogoBusiness, JogoBusiness>();
 
 var app = builder.Build();
 
