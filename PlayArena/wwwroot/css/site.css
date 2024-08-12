@@ -211,3 +211,39 @@ h2 {
 .fotovoltar{
     margin-left:150px;
 }
+
+.nome-jogo {
+    color: #516170;
+    font-weight: bold;
+    font-size:18px;
+}
+
+.informacoes-jogo {
+    color: #516170;
+    font-size:15px;
+    font-weight:500;
+}
+
+.detalhes-jogo {
+    color: #516170;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.btncompra {
+    background-color: #6CA921;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 6px 20px;
+    font-weight: 500;
+    display: flex;
+    margin: 0 auto;
+}
+
+.contaider-esquerda{
+    margin-left:150px;
+}

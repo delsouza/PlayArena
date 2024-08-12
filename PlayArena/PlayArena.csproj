@@ -42,6 +42,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj" />
+    <ProjectReference Include="..\DAO\DAO.csproj" />
     <ProjectReference Include="..\Infra\Infra.csproj" />
     <ProjectReference Include="..\Models\Models.csproj" />
     <ProjectReference Include="..\PlayArenaWAPI\PlayArenaWAPI.csproj" />

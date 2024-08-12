@@ -8,15 +8,12 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-	public class RequisitoModel
+	public class ImagemJogoModel
 	{
 		[Key]
 		[JsonPropertyName("id")]
 		public int Id { get; set; }
 		public int Id_Jogo { get; set; }
-		[JsonPropertyName("processador")]
-		public string Processador { get; set; } = string.Empty;
-		[JsonPropertyName("sistemaOperacional")]
-		public string SistemaOperacional { get; set; } = string.Empty;
+		public string URL { get; set; } = string.Empty;
 	}
 }

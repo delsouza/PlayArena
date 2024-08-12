@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business.Interface
+namespace Business.PlayArena.Interface
 {
 	public interface IRequisitoSistemaBusiness
 	{
-		public List<RequisitoModel> ListarRequisitoSistema(int Id);
-		public RequisitoModel ObterRequisitoPorId(int Id);
+		public RequisitoModel ObterRequisitoPorIdJogo(int id);
 	}
 }

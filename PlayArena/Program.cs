@@ -1,10 +1,24 @@
 using Infra.Context;
 using Infra.UnitOfWork;
+using Business.PlayArena.Interface;
+using Business.PlayArena;
+using DAO.Interface;
+using DAO;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddTransient<IRequisitoSistemaBusiness, RequisitoSistemaBusiness>();
+
+builder.Services.AddTransient<IImagemJogoBusiness, ImagemJogoBusiness>();
+
+builder.Services.AddTransient<IImagemJogoDAO, ImagemJogoDAO>();
+
+builder.Services.AddTransient<IJogoBusiness, JogoBusiness>();
+
+builder.Services.AddDbContext<ApplicationDbContext>();
 
 var app = builder.Build();
 

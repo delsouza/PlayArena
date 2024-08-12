@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business.Interface
+namespace Business.PlayArenaWAPI.Interface
 {
     public interface IJogoBusiness
     {
