@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/PlayArena.styles.css" asp-append-version="true" />
 </head>
-<body>
+<body class="d-flex flex-column justify-content-between">
     <header>
         <nav class="navbar-padrao navbar-expand-sm navbar-toggleable-sm navbar-light barranav border-bottom box-shadow mb-3">
             <div class="container-fluid d-flex justify-content-between">
@@ -33,13 +33,13 @@
         </nav>
     </header>
 
-    <div class="">
+    <div class="flex-grow-1 flex-shrink-1">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
     
-    <footer class="border-top footer text-muted d-flex justify-content-between footer-paginas-pai">
+    <footer class="border-top footer text-muted d-flex justify-content-between footer-paginas-pai fixed-bottom position-fixed">
         <div class="footer-paginas text-white ps-2 fw-bold">
             Jogue, explore, divirta-se!
             <img src="~/img/codicon--game.svg" class="p-1 pb-2" />

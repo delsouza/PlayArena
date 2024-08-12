@@ -9,7 +9,6 @@ namespace Business.PlayArena.Interface
 {
     public interface IJogoBusiness
     {
-        public List<JogoModel> ListarJogo();
         public JogoModel ObterJogoPorId(int id);
     }
 }

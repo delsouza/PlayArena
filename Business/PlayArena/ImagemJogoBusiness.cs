@@ -13,8 +13,24 @@ namespace Business.PlayArena
 {
     public class ImagemJogoBusiness : IImagemJogoBusiness
     {
-		public ImagemJogoBusiness()
+		private readonly IImagemJogoDAO _imagemJogoDAO;
+
+		public ImagemJogoBusiness(IImagemJogoDAO imagemJogoDAO)
 		{
+			_imagemJogoDAO = imagemJogoDAO;
+		}
+
+		public List<ImagemJogoModel> ListarImagemJogo(int idJogo)
+		{
+			var listImagemJogo = new List<ImagemJogoModel>();
+			var ImagensJogo = _imagemJogoDAO.ListarPor(x => x.Id_Jogo == idJogo);
+
+			foreach (var imagem in ImagensJogo)
+			{
+				listImagemJogo.Add((ImagemJogoModel)imagem);
+			}
+
+			return listImagemJogo;
 		}
 
 		public ImagemJogoModel ObterImagemJogoPorId(int idImagem)
@@ -36,9 +52,6 @@ namespace Business.PlayArena
 			var imagemJogo = JsonSerializer.Deserialize<ImagemJogoModel>(conteudoImagem.Result);
 
 			return imagemJogo;
-
-			//var imagem = _imagemJogoDAO.ListarPor(x => x.Id == idImagem).FirstOrDefault();
-            //return (ImagemJogoModel)imagem;
         }
     }
 }

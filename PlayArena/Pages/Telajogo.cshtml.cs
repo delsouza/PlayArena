@@ -16,7 +16,7 @@ namespace PlayArena.Pages
 
 		public JogoModel jogo { get; set; }
 		public RequisitoModel requisitos { get; set; }
-		public ImagemJogoModel imagemJogo { get; set; }
+		public List<ImagemJogoModel> imagemJogo { get; set; }
 
 		[BindProperty]
         public int Id { get; set; }
@@ -25,7 +25,7 @@ namespace PlayArena.Pages
 		{
 			jogo = new JogoModel();
 			requisitos = new RequisitoModel();
-			imagemJogo = new ImagemJogoModel();
+			imagemJogo = new List<ImagemJogoModel>();
 			_requisitoSistemaBusiness = requisitoSistemaBusiness;
 			_imagemJogoBusiness = imagemJogoBusiness;
 			_jogoBusiness = jogoBusiness;
@@ -36,18 +36,8 @@ namespace PlayArena.Pages
 			try
 			{
 				requisitos = _requisitoSistemaBusiness.ObterRequisitoPorIdJogo(Id);
-				imagemJogo = _imagemJogoBusiness.ObterImagemJogoPorId(Id);
+				imagemJogo = _imagemJogoBusiness.ListarImagemJogo(Id);
 				jogo = _jogoBusiness.ObterJogoPorId(Id);
-
-				//var client = new HttpClient();
-
-				//var url = $"https://localhost:7106/api/Jogo/api/jogo/listar/{Id}";
-
-				//var resposta = await client.GetAsync(url);
-
-				//var conteudo = await resposta.Content.ReadAsStringAsync();
-
-				//jogo = JsonSerializer.Deserialize<JogoModel>(conteudo);
 			}
 			catch (Exception)
 			{

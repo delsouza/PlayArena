@@ -14,27 +14,6 @@ namespace Business.PlayArena
 {
     public class JogoBusiness : IJogoBusiness
     {
-        private readonly IPlayArenaDAO _playArenaDAO;
-
-        public JogoBusiness(IPlayArenaDAO playArenaDAO)
-        {
-            _playArenaDAO = playArenaDAO;
-        }
-
-        public List<JogoModel> ListarJogo()
-        {
-            var list = new List<JogoModel>();
-            var listaentity = _playArenaDAO.Listar();
-            foreach (var jogo in listaentity)
-            {
-                var jogoCasting = (JogoModel)jogo;
-                list.Add(jogoCasting);
-
-            }
-            return list;
-
-        }
-
 		public JogoModel ObterJogoPorId(int idJogo)
 		{
 			HttpClient clientJogo = new HttpClient();

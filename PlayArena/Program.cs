@@ -2,6 +2,8 @@ using Infra.Context;
 using Infra.UnitOfWork;
 using Business.PlayArena.Interface;
 using Business.PlayArena;
+using DAO.Interface;
+using DAO;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +14,11 @@ builder.Services.AddTransient<IRequisitoSistemaBusiness, RequisitoSistemaBusines
 
 builder.Services.AddTransient<IImagemJogoBusiness, ImagemJogoBusiness>();
 
+builder.Services.AddTransient<IImagemJogoDAO, ImagemJogoDAO>();
+
 builder.Services.AddTransient<IJogoBusiness, JogoBusiness>();
+
+builder.Services.AddDbContext<ApplicationDbContext>();
 
 var app = builder.Build();
 

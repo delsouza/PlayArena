@@ -10,5 +10,5 @@ namespace Business.PlayArenaWAPI.Interface
     public interface IImagemJogoBusiness
     {
         public ImagemJogoModel ObterImagemJogoPorId(int id);
-    }
+	}
 }

@@ -19,12 +19,11 @@ namespace Business.PlayArenaWAPI
             _imagemJogoDAO = imagemJogoDAO;
         }
 
-        public ImagemJogoModel ObterImagemJogoPorId(int idImagem)
+		public ImagemJogoModel ObterImagemJogoPorId(int idImagem)
         {
             var imagem = _imagemJogoDAO.ListarPor(x => x.Id_Jogo == idImagem).FirstOrDefault();
 
             return (ImagemJogoModel)imagem;
         }
-
     }
 }

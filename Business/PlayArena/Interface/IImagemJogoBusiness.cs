@@ -10,5 +10,6 @@ namespace Business.PlayArena.Interface
     public interface IImagemJogoBusiness
     {
         public ImagemJogoModel ObterImagemJogoPorId(int id);
-    }
+		public List<ImagemJogoModel> ListarImagemJogo(int id);
+	}
 }
