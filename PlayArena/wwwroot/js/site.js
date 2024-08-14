@@ -1,4 +1,5 @@
 ﻿const searchInput = document.getElementById('searchInput');
+const imagemSearchInput = document.getElementById('lupa');
 
 searchInput.addEventListener('input', (event) => {
     const value = formatString(event.target.value);
@@ -12,6 +13,21 @@ searchInput.addEventListener('input', (event) => {
             item.style.display = 'none';
         }
     })
+});
+
+searchInput.addEventListener('input', (event) => {
+    const value = event.target.value;
+    imagemSearchInput.style.display = value.trim() === '' ? 'block' : 'none';
+});
+
+searchInput.addEventListener('focus', () => {
+    imagemSearchInput.style.display = 'none';
+});
+
+document.addEventListener('click', (event) => {
+    if (event.target !== searchInput && searchInput.value.trim() === '') {
+        imagemSearchInput.style.display = 'block';
+    }
 });
 
 function formatString(value) {
