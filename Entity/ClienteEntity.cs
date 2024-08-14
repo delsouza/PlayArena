@@ -18,6 +18,7 @@ namespace Entity
         public string Endereco { get; set; } = string.Empty;
         public int Telefone { get; set; }
         public string Email { get; set; } = string.Empty;
+        public string Senha { get; set; } = string.Empty;
 
         public static explicit operator ClienteModel(ClienteEntity source)
         {
@@ -28,7 +29,8 @@ namespace Entity
                     Nome = source.Nome,
                     Endereco = source.Endereco,
                     Telefone = source.Telefone,
-                    Email = source.Email
+                    Email = source.Email,
+                    Senha = source.Senha
                 };
             }
             else
