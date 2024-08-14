@@ -11,9 +11,15 @@ namespace Models
     {
         [Key]
         public int Id { get; set; }
+        [Required(ErrorMessage = "Digite o seu nome!")]
         public string Nome { get; set; } = string.Empty;
+        [Required(ErrorMessage = "Digite o endereço!")]
         public string Endereco { get; set; } = string.Empty;
+        [Required(ErrorMessage = "Digite o seu telefone!")]
         public int Telefone { get; set; }
+        [Required(ErrorMessage = "Digite o seu email!")]
         public string Email { get; set; } = string.Empty;
+        [Required(ErrorMessage = "Digite a sua senha!")]
+        public string Senha { get; set; } = string.Empty;
     }
 }

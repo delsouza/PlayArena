@@ -1,4 +1,19 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿const searchInput = document.getElementById('searchInput');
 
-// Write your JavaScript code.
+searchInput.addEventListener('input', (event) => {
+    const value = formatString(event.target.value);
+
+    const items = document.querySelectorAll('.cardscatalogo');
+
+    items.forEach(item => {
+        if (formatString(item.textContent).indexOf(value) !== -1) {
+            item.style.display = 'flex';
+        } else {
+            item.style.display = 'none';
+        }
+    })
+});
+
+function formatString(value) {
+    return value.toLowerCase().trim();
+}

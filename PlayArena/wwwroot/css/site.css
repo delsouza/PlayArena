@@ -241,9 +241,18 @@ h2 {
     padding: 6px 20px;
     font-weight: 500;
     display: flex;
-    margin: 0 auto;
+
 }
 
 .contaider-esquerda{
     margin-left:150px;
+}
+
+.contaider-direita {
+    margin-right: 150px;
+}
+
+.carousel{
+    height:320px;
+    width:550px;
 }

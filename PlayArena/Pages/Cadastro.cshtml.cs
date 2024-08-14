@@ -7,6 +7,11 @@ namespace PlayArena.Pages
     {
         public void OnGet()
         {
+
+        }
+        public void OnPost() 
+        {
+            
         }
     }
 }
