@@ -2,7 +2,6 @@
 const imagemSearchInput = document.getElementById('lupa');
 const botao = document.getElementById('botao');
 const modal = document.querySelector("dialog");
-const btncomprar = document.getElementById
 
 if (searchInput !== null) {
     searchInput.addEventListener('input', (event) => {

@@ -37,19 +37,26 @@
 
 					<dialog class="popup">
 						<p class="termos">Aceite os termos e condições</p>
-						<div>
-							<input type="checkbox"b class="checkbox" required/>
-							<label for="" class="textocheckbox">Política de privacidade</label>
-						</div>
-						<div>
-							<input type="checkbox" class="checkbox" required />
-							<label for="" class="textocheckbox">Termos de responsabilidade</label>
-						</div>
-						<div>
-							<input type="checkbox" class="checkbox" required/>
-							<label for="" class="textocheckbox">Conduta de reembolso</label>
-						</div>
-						<button class="btncompra mt-5" id="botao">Comprar</button>
+
+						<label class="containercheckbox textocheckbox">
+							Política de privacidade
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
+
+						<label class="containercheckbox textocheckbox">
+							Termos de responsabilidade
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
+
+						<label class="containercheckbox textocheckbox">
+							Conduta de reembolso
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
+
+						<button class="btn-compra-termo" id="botao">Comprar</button>
 					</dialog>
 				</div>
 			</div>
@@ -61,7 +68,6 @@
 			<p class="informacoes-jogo">Processador</p>
 			<p class="informacoes-jogo">@requisitos.Processador</p>
 		</div>
-		
 	</div>
 	<div class="d-flex flex-column container align-items-center">
 		<div class="d-flex col-8">
