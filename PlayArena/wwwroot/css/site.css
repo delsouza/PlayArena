@@ -260,3 +260,27 @@ h2 {
 #lupa{
     
 }
+
+.popup {
+    background-color: #d9d9d9;
+    height: 400px;
+    width: 500px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 20px 2px 2 #888;
+}
+
+.termos {
+    font-weight: bold;
+    font-size: 22px;
+    color: #404E5C;
+}
+
+.checkbox {
+   
+}
+
+.textocheckbox {
+    color: #404E5C;
+    font-weight:600;
+}

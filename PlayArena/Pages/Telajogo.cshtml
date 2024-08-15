@@ -33,7 +33,24 @@
 						<span class="detalhes-jogo">Quantidade disponível:</span>
 						<span class="informacoes-jogo">@jogo.QuantidadeDisponivel</span>
 					</div>
-					<button class="btncompra mt-5">Comprar: @jogo.Preco</button>
+					<button class="btncompra mt-5" id="botao">Comprar: @jogo.Preco</button>
+
+					<dialog class="popup">
+						<p class="termos">Aceite os termos e condições</p>
+						<div>
+							<input type="checkbox"b class="checkbox" required/>
+							<label for="" class="textocheckbox">Política de privacidade</label>
+						</div>
+						<div>
+							<input type="checkbox" class="checkbox" required />
+							<label for="" class="textocheckbox">Termos de responsabilidade</label>
+						</div>
+						<div>
+							<input type="checkbox" class="checkbox" required/>
+							<label for="" class="textocheckbox">Conduta de reembolso</label>
+						</div>
+						<button class="btncompra mt-5" id="botao">Comprar</button>
+					</dialog>
 				</div>
 			</div>
 			<p class="nome-jogo mt-3">@jogo.Nome</p>
