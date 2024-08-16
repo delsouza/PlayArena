@@ -279,6 +279,10 @@ h2 {
     margin-bottom:50px;
 }
 
+#botao{
+
+}
+
 .textocheckbox {
     color: #404E5C;
     font-weight: 600;
@@ -313,8 +317,7 @@ h2 {
     user-select: none;
 }
 
-
-.container input {
+#myCheckbox {
     position: absolute;
     opacity: 0;
     cursor: pointer;
