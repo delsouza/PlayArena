@@ -19,6 +19,11 @@ namespace DAO
             _db = db;
         }
 
+        public void Criar(TEntidade entidade)
+        {
+            _db.Set<TEntidade>().Add(entidade);
+        }
+
         public IQueryable<TEntidade> ListarPor(Expression<Func<TEntidade, bool>> where, params Expression<Func<TEntidade, object>>[] includeProperties)
         {
             return Listar(includeProperties).Where(where);

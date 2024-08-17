@@ -1,5 +1,5 @@
 ﻿@page
-@model PlayArena.Pages.CadastroModel
+@model PlayArena.Pages.Conta.CadastroModel
 @{
 }
 
@@ -35,7 +35,7 @@
                 <input type="password" asp-for="ClienteModel.Senha" class="form-control input-informacoes" id="exampleInputPassword1" placeholder="Senha">
             </div>
             <button type="submit" class="btn-cadastro-input mt-5 mb-5">Cadastrar</button>
-            <p class="mt-4 text-center">Já é membro? <a class="text-decoration-none" asp-page="./login"> Login</a></p>
+            <p class="mt-4 text-center">Já é membro? <a class="text-decoration-none" asp-page="/Conta/Login"> Login</a></p>
         </form>
     </div>
 </div>

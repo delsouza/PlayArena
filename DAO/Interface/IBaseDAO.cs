@@ -9,6 +9,7 @@ namespace DAO.Interface
 {
     public interface IBaseDAO<TEntidade> where TEntidade : class
     {
+        public void Criar(TEntidade entidade);
         public IQueryable<TEntidade> ListarPor(Expression<Func<TEntidade, bool>> where, params Expression<Func<TEntidade, object>>[] includeProperties);
         public IQueryable<TEntidade> Listar(params Expression<Func<TEntidade, object>>[] includeProperties);
     }

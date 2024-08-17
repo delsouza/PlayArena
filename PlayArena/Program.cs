@@ -4,6 +4,7 @@ using Business.PlayArena.Interface;
 using Business.PlayArena;
 using DAO.Interface;
 using DAO;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,8 +19,23 @@ builder.Services.AddTransient<IImagemJogoDAO, ImagemJogoDAO>();
 
 builder.Services.AddTransient<IJogoBusiness, JogoBusiness>();
 
+builder.Services.AddScoped<IClienteBusiness, ClienteBusiness>();
+
+builder.Services.AddScoped<IClienteDAO, ClienteDAO>();
+
 builder.Services.AddDbContext<ApplicationDbContext>();
 
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+.AddCookie(options =>
+{
+    options.LoginPath = "/Conta/Login";
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(3);
+    options.SlidingExpiration = true;
+    options.Cookie.Name = "CookiePlayArena";
+});
+
+
+builder.Services.AddAuthorization();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -36,6 +52,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseAuthentication();
 
 app.MapRazorPages();
 

@@ -37,5 +37,7 @@ namespace Models
 
 		[JsonPropertyName("descricao")]
 		public string Descricao { get; set; }
+		[JsonPropertyName("precoAlugel")]
+		public decimal PrecoAluguel { get; set; }
 	}
 }

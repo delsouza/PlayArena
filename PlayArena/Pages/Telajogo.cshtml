@@ -33,9 +33,11 @@
 						<span class="detalhes-jogo">Quantidade disponível:</span>
 						<span class="informacoes-jogo">@jogo.QuantidadeDisponivel</span>
 					</div>
-					<button class="btncompra mt-5" id="botao">Comprar: @jogo.Preco</button>
 
-					<dialog class="popup">
+					<button class="btncompra mt-4" id="botaoAluguel">Alugar: @jogo.PrecoAluguel</button>
+					<button class="btncompra mt-4" id="botao">Comprar: @jogo.Preco</button>
+					
+					<dialog class="popup" id="modalCompraId">
 						<p class="termos">Aceite os termos e condições</p>
 
 						<label class="containercheckbox textocheckbox">
@@ -57,6 +59,30 @@
 						</label>
 
 						<button class="btn-compra-termo" id="botao">Comprar</button>
+					</dialog>
+
+					<dialog class="popup" id="modalAluguelId">
+						<p class="termos">Aceite os termos e condições</p>
+
+						<label class="containercheckbox textocheckbox">
+							Política de privacidade
+							<input type="checkbox" id="myCheckbox">
+							<span class="checkmark"></span>
+						</label>
+
+						<label class="containercheckbox textocheckbox">
+							Termos de responsabilidade
+							<input type="checkbox" id="myCheckbox">
+							<span class="checkmark"></span>
+						</label>
+
+						<label class="containercheckbox textocheckbox">
+							Conduta de reembolso
+							<input type="checkbox" id="myCheckbox">
+							<span class="checkmark"></span>
+						</label>
+
+						<button class="btn-compra-termo" id="botaoAluguel">Alugar</button>
 					</dialog>
 				</div>
 			</div>
