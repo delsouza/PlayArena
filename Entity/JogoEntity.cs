@@ -23,6 +23,7 @@ namespace Entity
         public string Capa { get; set; }
 		public string Descricao { get; set; }
 		public decimal PrecoAluguel { get; set; }
+		public string DescricaoPequena { get; set; }
 
 		public static explicit operator JogoModel(JogoEntity source)
         {
@@ -39,7 +40,8 @@ namespace Entity
                     Preco = source.Preco,
                     Capa = source.Capa,
                     Descricao = source.Descricao,
-					PrecoAluguel = source.PrecoAluguel
+					PrecoAluguel = source.PrecoAluguel,
+					DescricaoPequena = source.DescricaoPequena
 				};
             }
             else

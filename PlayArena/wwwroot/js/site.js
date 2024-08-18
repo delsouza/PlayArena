@@ -4,6 +4,11 @@ const botaoCompra = document.getElementById('botao');
 const botaoAluguel = document.getElementById('botaoAluguel');
 const modalCompra = document.getElementById('modalCompraId');
 const modalAluguel = document.getElementById('modalAluguelId');
+const tema = document.getElementById('tema');
+
+tema.addEventListener('click', () => {
+    document.body.classList.toggle('dark')
+});
 
 if (searchInput !== null) {
     searchInput.addEventListener('input', (event) => {

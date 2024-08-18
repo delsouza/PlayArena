@@ -6,12 +6,46 @@ html {
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 body {
-  margin-bottom: 60px;
-  height:100%;
+    margin-bottom: 60px;
+    height:100%;
+
+    transition:background 0.2s linear;
+}
+
+body.dark {
+    background: #0B1622;
+}
+
+body.dark .informacoes-jogo  {
+    color: #FFFFFF;
+}
+
+body.dark .detalhes-jogo {
+    color: #FFFFFF;
+}
+
+body.dark .nome-jogo {
+    color: #FFFFFF;
+}
+
+body.dark .btnvoltar {
+    color: #FFFFFF;
+}
+
+body.dark .pesquisar {
+    color: #FFFFFF;
+}
+
+body.dark .nomedojogo {
+    color: #FFFFFF;
+}
+
+body.dark .playarena {
+    color: #C9D7E3;
 }
 
 .nav {
@@ -24,7 +58,7 @@ body {
 
 .navbar-padrao {
     padding-top: 7px;
-    padding-bottom: 10px;
+    padding-bottom: 12px;
 }
 
 .btn-cadastro {
@@ -180,6 +214,10 @@ h2 {
 
 .footer-paginas-pai {
     background-color: #152232;
+}
+
+footer {
+    border: none;
 }
 
 .cardscatalogo {
@@ -362,4 +400,62 @@ h2 {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+
+.checkbox-wrapper-54 input[type="checkbox"] {
+    visibility: hidden;
+    display: none;
+}
+
+.checkbox-wrapper-54 *,
+.checkbox-wrapper-54 ::after,
+.checkbox-wrapper-54 ::before {
+    box-sizing: border-box;
+}
+
+.checkbox-wrapper-54 .switch {
+    --width-of-switch: 3.5em;
+    --height-of-switch: 2em;
+    --size-of-icon: 1.4em;
+    --slider-offset: 0.3em;
+    position: relative;
+    width: var(--width-of-switch);
+    height: var(--height-of-switch);
+    display: inline-block;
+}
+
+.checkbox-wrapper-54 .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f4f4f5;
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.checkbox-wrapper-54 .slider:before {
+    position: absolute;
+    content: "";
+    height: var(--size-of-icon,1.4em);
+    width: var(--size-of-icon,1.4em);
+    border-radius: 20px;
+    left: var(--slider-offset,0.3em);
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+    ;
+    transition: .4s;
+}
+
+.checkbox-wrapper-54 input:checked + .slider {
+    background-color: #303136;
+}
+
+.checkbox-wrapper-54 input:checked + .slider:before {
+    left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+    background: #303136;
+    box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
 }
