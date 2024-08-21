@@ -22,11 +22,6 @@ namespace PlayArena.Pages.Conta
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
             var cliente = await _clienteBusiness.Login(ClienteModel.Email, ClienteModel.Senha);
 
             if (cliente != null)

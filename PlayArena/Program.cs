@@ -20,7 +20,7 @@ builder.Services.AddTransient<IImagemJogoDAO, ImagemJogoDAO>();
 builder.Services.AddTransient<IJogoBusiness, JogoBusiness>();
 
 builder.Services.AddScoped<IClienteBusiness, ClienteBusiness>();
-
+    
 builder.Services.AddScoped<IClienteDAO, ClienteDAO>();
 
 builder.Services.AddDbContext<ApplicationDbContext>();
@@ -51,8 +51,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
 app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapRazorPages();
 

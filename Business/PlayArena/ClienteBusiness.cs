@@ -22,10 +22,9 @@ namespace Business.PlayArena
             _clienteDAO = clienteDAO;
             _context = context;
         }
-
+        
         public async Task Cadastro(ClienteModel cliente)
         {
-
             var Clientes = await _clienteDAO.ListarPor(i => i.Email == cliente.Email).SingleOrDefaultAsync();
 
             if (Clientes != null)

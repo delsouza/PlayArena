@@ -8,31 +8,10 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/PlayArena.styles.css" asp-append-version="true" />
 </head>
-<body class="d-flex flex-column justify-content-between">
-    <header>
-        <nav class="navbar-padrao navbar-expand-sm navbar-toggleable-sm navbar-light barranav box-shadow mb-3">
-            <div class="container-fluid d-flex justify-content-between">
-                <div class="d-flex align-items-center">
-                    <a class="navbar-brand fw-bold" asp-area="" asp-page="/Index" style="color: #C9D7E3;">PlayArena</a>
-                    <img src="~/img/codicon--game.svg" />
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                    <a class="navbar-brand catalogo-palavra ms-4" asp-area="" asp-page="/Catalogo" style="color: #C9D7E3;">Catálogo</a>
-                    <img src="~/img/carbon--catalog.png" />
-                </div>
-                <div class="d-flex justify-content-end align-items-center">
-                    <a class="btn-login" asp-page="/Conta/Login"> Login</a>
-                    <div class="d-flex align-items-center me-2">
-                        <img src="~/img/material-symbols--login.svg" class="ms-2" width="24" height="24" />
-                    </div>
-                    <a class="btn-cadastro" asp-page="/Conta/Cadastro"> Cadastro</a>
-                </div>
-            </div>
-        </nav>
-    </header>
 
+<body class="d-flex flex-column justify-content-between">
+    @await Component.InvokeAsync("HeaderViewComponent")
+   
     <div class="flex-grow-1 flex-shrink-1">
         <main role="main" class="pb-3">
             @RenderBody()

@@ -7,6 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Models;
 using DAO.Interface;
+using System.Net.Http;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 
 namespace DAO
 {
@@ -23,6 +26,19 @@ namespace DAO
         {
             _db.Set<TEntidade>().Add(entidade);
         }
+
+        //public async Task OnGetAsync(string returnUrl = null)
+        //{
+        //    if (!string.IsNullOrEmpty(ErrorMessage))
+        //    {
+        //        ModelState.AddModelError(string.Empty, ErrorMessage);
+        //    }
+
+        //    await HttpContext.SignOutAsync(
+        //        CookieAuthenticationDefaults.AuthenticationScheme);
+
+        //    ReturnUrl = returnUrl;
+        //}
 
         public IQueryable<TEntidade> ListarPor(Expression<Func<TEntidade, bool>> where, params Expression<Func<TEntidade, object>>[] includeProperties)
         {

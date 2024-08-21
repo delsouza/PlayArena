@@ -1,3 +1,6 @@
+using Business.PlayArena;
+using Business.PlayArena.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Models;
@@ -6,8 +9,11 @@ using System.Text.Json;
 
 namespace PlayArena.Pages
 {
+    [Authorize]
     public class CatalogoModel : PageModel
     {
+        private readonly IClienteBusiness _clienteBusiness;
+
         public List<JogoModel> listajogo { get; set; }
 
         public CatalogoModel()

@@ -20,19 +20,12 @@ namespace PlayArena.Pages.Conta
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return Page();
+            //}
 
-            var cliente = new ClienteModel
-            {
-                Nome = ClienteModel.Nome,
-                Endereco = ClienteModel.Endereco,
-                Telefone = ClienteModel.Telefone,
-                Email = ClienteModel.Email,
-                Senha = ClienteModel.Senha
-            };
+            var cliente = ClienteModel;
 
             await _clienteBusiness.Cadastro(cliente);
 
