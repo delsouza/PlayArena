@@ -27,17 +27,24 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
-                <div class="d-flex justify-content-end align-items-center">
-                    <a class="btn-login" asp-page="./login"> Login</a>
+                @* <div class="d-flex justify-content-end align-items-center">
+                    <a class="btn-login" asp-page="/Conta/Login"> Login</a>
                     <div class="d-flex align-items-center">
-                        <img src="~/img/material-symbols--login.svg" class="ms-2"  width="24" height="24" />
+                        <img src="~/img/material-symbols--login.svg" class="ms-2 me-2"  width="24" height="24" />
                     </div>
-                    <a class="btn-cadastro" asp-page="./cadastro"> Cadastro</a>
-                </div>
+                    <a class="btn-cadastro" asp-page="/Conta/Cadastro"> Cadastro</a>
+                </div> *@
             </div>
         </nav>
+        <div class="d-flex justify-content-end me-3">
+            <div class="checkbox-wrapper-54">
+                <label class="switch">
+                    <input type="checkbox" id="tema">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
     </header>
-
     <div class="">
         <main role="main" class="pb-3">
             <div>

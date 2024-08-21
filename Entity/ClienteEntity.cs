@@ -36,5 +36,22 @@ namespace Entity
             else
                 return null;
         }
+
+        public static explicit operator ClienteEntity(ClienteModel source)
+        {
+            if (source != null)
+            {
+                return new ClienteEntity()
+                {
+                    Nome = source.Nome,
+                    Endereco = source.Endereco,
+                    Telefone = source.Telefone,
+                    Email = source.Email,
+                    Senha = source.Senha
+                };
+            }
+            else
+                return null;
+        }
     }
 }

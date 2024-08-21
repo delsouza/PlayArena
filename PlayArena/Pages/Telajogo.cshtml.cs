@@ -5,9 +5,11 @@ using Models;
 using PlayArenaWAPI.Controllers;
 using System.Text.Json;
 using Business.PlayArena.Interface;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PlayArena.Pages
 {
+    [Authorize]
     public class TelajogoModel : PageModel
     {
 		private readonly IRequisitoSistemaBusiness _requisitoSistemaBusiness;

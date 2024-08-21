@@ -22,7 +22,7 @@ namespace Models
 		[Required(ErrorMessage = "Digite o seu email!")]
         public string Email { get; set; } = string.Empty;
         [Required(ErrorMessage = "Digite a sua senha!")]
-		[DataType(DataType.Password)]
+        [DataType(DataType.Password)]
 		public string Senha { get; set; } = string.Empty;
     }
 }

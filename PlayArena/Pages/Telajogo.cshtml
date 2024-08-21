@@ -7,6 +7,15 @@
 	var imagemJogo = Model.imagemJogo;
 }
 
+<div class="d-flex justify-content-end me-3">
+	<div class="checkbox-wrapper-54">
+		<label class="switch">
+			<input type="checkbox" id="tema">
+			<span class="slider"></span>
+		</label>
+	</div>
+</div>
+
 <div class="justify-content-lg-start d-flex">
 	<img class="fotovoltar mt-5 me-1" src="~/img/weui--back-filled.png" width="14" height="20" />
 	<a class="btnvoltar" asp-page="./Catalogo"> Voltar</a>
@@ -33,9 +42,11 @@
 						<span class="detalhes-jogo">Quantidade disponível:</span>
 						<span class="informacoes-jogo">@jogo.QuantidadeDisponivel</span>
 					</div>
-					<button class="btncompra mt-5" id="botao">Comprar: @jogo.Preco</button>
 
-					<dialog class="popup">
+					<button class="btncompra mt-4" id="botaoAluguel">Alugar: @jogo.PrecoAluguel</button>
+					<button class="btncompra mt-4" id="botao">Comprar: @jogo.Preco</button>
+					
+					<dialog class="popup" id="modalCompraId">
 						<p class="termos">Aceite os termos e condições</p>
 
 						<label class="containercheckbox textocheckbox">
@@ -58,9 +69,34 @@
 
 						<button class="btn-compra-termo" id="botao">Comprar</button>
 					</dialog>
+
+					<dialog class="popup" id="modalAluguelId">
+						<p class="termos">Aceite os termos e condições</p>
+
+						<label class="containercheckbox textocheckbox">
+							Política de privacidade
+							<input type="checkbox" id="myCheckbox">
+							<span class="checkmark"></span>
+						</label>
+
+						<label class="containercheckbox textocheckbox">
+							Termos de responsabilidade
+							<input type="checkbox" id="myCheckbox">
+							<span class="checkmark"></span>
+						</label>
+
+						<label class="containercheckbox textocheckbox">
+							Conduta de reembolso
+							<input type="checkbox" id="myCheckbox">
+							<span class="checkmark"></span>
+						</label>
+
+						<button class="btn-compra-termo" id="botaoAluguel">Alugar</button>
+					</dialog>
 				</div>
 			</div>
 			<p class="nome-jogo mt-3">@jogo.Nome</p>
+			<p class="informacoes-jogo">@jogo.DescricaoPequena</p>
 			<p class="informacoes-jogo">Requisitos de sistema de @jogo.Nome:</p>
 			<p class="informacoes-jogo">Sistema operacional</p>
 			<p class="informacoes-jogo">@requisitos.SistemaOperacional</p>

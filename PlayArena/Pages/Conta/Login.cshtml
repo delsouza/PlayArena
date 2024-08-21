@@ -1,0 +1,64 @@
+﻿@page
+@model PlayArena.Pages.Conta.LoginModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlayArena</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PlayArena.styles.css" asp-append-version="true" />
+</head>
+
+<body class="d-flex flex-column justify-content-between">
+    <div class="flex-grow-1 flex-shrink-1">
+        <main role="main" class="pb-3">
+            <style>
+                body {
+                    background-color: #EDF1F5;
+                }
+            </style>
+
+            <div class="d-flex justify-content-end me-3 mt-3">
+                <div class="checkbox-wrapper-54">
+                    <label class="switch">
+                        <input type="checkbox" id="tema" onclick="trocarImagem()">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="container-pai d-flex justify-content-center align-items-center">
+                <div class="login-conteiner d-flex justify-content-center align-items-center">
+                    <form method="post">
+                        <div class="mb-2">
+                            <p class="mt-4 titulo-login-cadastro">Login</p>
+                            <label for="exampleInputEmail1" class="form-label"></label>
+                            <input type="email" size="200" name="Email" class="form-control input-informacoes mt-4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                            <div id="emailHelp" class="form-text"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label"></label>
+                            <input type="password" name="Senha" class="form-control input-informacoes" id="exampleInputPassword1" placeholder="Senha">
+                        </div>
+                        <button type="submit" class="btn-login-input mt-5 mb-5">Login</button>
+                        <p class="mt-4 text-center">Não está registrado? <a class="text-decoration-none" asp-page="/Conta/Cadastro"> Criar conta</a></p>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>
+
+
+

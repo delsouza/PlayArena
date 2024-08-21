@@ -1,0 +1,26 @@
+﻿@model string
+
+    <header>
+        <nav class="navbar-padrao navbar-expand-sm navbar-toggleable-sm navbar-light barranav box-shadow mb-3">
+            <div class="container-fluid d-flex justify-content-between">
+                <div class="d-flex align-items-center">
+                    <a class="navbar-brand fw-bold" asp-area="" asp-page="/Index" style="color: #C9D7E3;">PlayArena</a>
+                    <img src="~/img/codicon--game.svg" />
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand catalogo-palavra ms-4" asp-area="" asp-page="/Catalogo" style="color: #C9D7E3;">Catálogo</a>
+                    <img src="~/img/carbon--catalog.png" />
+                </div>
+                <div class="d-flex justify-content-end align-items-center">
+                <span class="text-white me-4 fw-bold">@Model</span>
+                <a class="btn-sair text-white fw-bold" asp-area="" asp-page="/Conta/Logout">Sair</a>
+                    <div class="d-flex align-items-center">
+                        <img src="~/img/material-symbols--login.svg" class="" width="24" height="24" />
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+

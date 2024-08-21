@@ -1,7 +1,14 @@
 ﻿const searchInput = document.getElementById('searchInput');
 const imagemSearchInput = document.getElementById('lupa');
-const botao = document.getElementById('botao');
-const modal = document.querySelector("dialog");
+const botaoCompra = document.getElementById('botao');
+const botaoAluguel = document.getElementById('botaoAluguel');
+const modalCompra = document.getElementById('modalCompraId');
+const modalAluguel = document.getElementById('modalAluguelId');
+const tema = document.getElementById('tema');
+
+tema.addEventListener('click', () => {
+    document.body.classList.toggle('dark')
+});
 
 if (searchInput !== null) {
     searchInput.addEventListener('input', (event) => {
@@ -38,6 +45,10 @@ function formatString(value) {
     return value.toLowerCase().trim();
 }
 
-botao.onclick = function () {
-    modal.showModal()
+botaoCompra.onclick = function () {
+    modalCompra.showModal()
+}
+
+botaoAluguel.onclick = function () {
+    modalAluguel.showModal()
 }
