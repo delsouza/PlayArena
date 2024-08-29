@@ -21,18 +21,41 @@ namespace Entity
         public DateTime DataDevolucaoReal { get; set; }
         public decimal Multa { get; set; }
 
-        public static explicit operator AluguelModel(AluguelEntity source)
+		public AluguelEntity()
+		{
+
+		}
+
+		public AluguelEntity(int Idjogo, int Idcliente)
+		{
+			Id_Cliente = Idcliente;
+			Id_Jogo = Idjogo;
+		}
+
+		public static explicit operator AluguelModel(AluguelEntity source)
         {
             if (source != null)
             {
                 return new AluguelModel()
                 {
-                    DataAluguel = source.DataAluguel,
-                    DataDevolucaoPrevista = source.DataDevolucaoPrevista
+                    DataAluguel = source.DataAluguel
                 };
             }
             else
                 return null;
         }
-    }
+		
+		public static explicit operator AluguelEntity(AluguelModel source)
+		{
+			if (source != null)
+			{
+				return new AluguelEntity()
+				{
+					DataAluguel = source.DataAluguel
+				};
+			}
+			else
+				return null;
+		}
+	}
 }

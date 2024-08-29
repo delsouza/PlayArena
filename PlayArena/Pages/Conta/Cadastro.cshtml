@@ -44,18 +44,22 @@
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label"></label>
                             <input type="text" asp-for="ClienteModel.Nome" class="form-control input-informacoes" id="exampleInputPassword1" placeholder="Nome">
+                            <span asp-validation-for="ClienteModel.Nome" class="text-danger"></span>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label"></label>
                             <input type="text" asp-for="ClienteModel.Endereco" class="form-control input-informacoes" id="exampleInputPassword1" placeholder="Endereço">
+                            <span asp-validation-for="ClienteModel.Endereco" class="text-danger"></span>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label"></label>
                             <input type="number" asp-for="ClienteModel.Telefone" class="form-control input-informacoes" id="exampleInputPassword1" placeholder="Telefone">
+                            <span asp-validation-for="ClienteModel.Telefone" class="text-danger"></span>
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label"></label>
                             <input type="password" asp-for="ClienteModel.Senha" class="form-control input-informacoes" id="exampleInputPassword1" placeholder="Senha">
+                            <span asp-validation-for="ClienteModel.Senha" class="text-danger"></span>
                         </div>
                         <button type="submit" class="btn-cadastro-input mt-5 mb-5">Cadastrar</button>
                         <p class="mt-4 text-center">Já é membro? <a class="text-decoration-none" asp-page="/Conta/Login"> Login</a></p>

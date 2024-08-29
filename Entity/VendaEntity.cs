@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using Microsoft.Identity.Client;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -18,6 +19,17 @@ namespace Entity
         public int Id_Jogo { get; set; }
         public DateTime DataVenda { get; set; }
 
+        public VendaEntity()
+        {
+            
+        }
+
+        public VendaEntity(int Idjogo, int Idcliente)
+        {
+			Id_Cliente = Idcliente;
+            Id_Jogo = Idjogo;
+		}
+
         public static explicit operator VendaModel(VendaEntity source)
         {
             if (source != null)
@@ -30,5 +42,18 @@ namespace Entity
             else
                 return null;
         }
-    }
+
+		public static explicit operator VendaEntity(VendaModel source)
+		{
+			if (source != null)
+			{
+				return new VendaEntity()
+				{
+					DataVenda = source.DataVenda
+				};
+			}
+			else
+				return null;
+		}
+	}
 }

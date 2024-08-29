@@ -29,5 +29,14 @@ namespace DAO
             var entity = new JogoEntity();
             model = (JogoModel)entity;
         }
+
+        public JogoModel EditarJogo(JogoModel jogo)
+        {
+            _db.Update((JogoEntity)jogo);
+
+            _db.SaveChanges();
+
+            return jogo;
+        }
     }
 }

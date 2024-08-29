@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace Business.PlayArena.Interface
 {
-    public interface IJogoBusiness
-    {
-        public JogoModel ObterJogoPorId(int id);
+	public interface IAluguelBusiness
+	{
+		public Task CadastrarAluguel(AluguelModel aluguel);
+		public AluguelModel ObterAluguelPorId(int id);
 	}
 }

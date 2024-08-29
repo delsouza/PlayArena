@@ -11,8 +11,8 @@ namespace Entity
 {
     public class JogoEntity
     {
-        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public int Id { get; set; }
         public string Nome { get; set; } = string.Empty;
         public string Empresa { get; set; } = string.Empty;
@@ -43,6 +43,29 @@ namespace Entity
 					PrecoAluguel = source.PrecoAluguel,
 					DescricaoPequena = source.DescricaoPequena
 				};
+            }
+            else
+                return null;
+        }
+
+        public static explicit operator JogoEntity(JogoModel source)
+        {
+            if (source != null)
+            {
+                return new JogoEntity()
+                {
+                    Id = source.Id,
+                    Nome = source.Nome,
+                    Empresa = source.Empresa,
+                    Genero = source.Genero,
+                    QuantidadeDisponivel = source.QuantidadeDisponivel,
+                    DataLancamento = source.DataLancamento,
+                    Preco = source.Preco,
+                    Capa = source.Capa,
+                    Descricao = source.Descricao,
+                    PrecoAluguel = source.PrecoAluguel,
+                    DescricaoPequena = source.DescricaoPequena
+                };
             }
             else
                 return null;

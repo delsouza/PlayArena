@@ -9,6 +9,8 @@ using DAO.Interface;
 using Models;
 using Business.PlayArena.Interface;
 using System.Text.Json;
+using Microsoft.EntityFrameworkCore;
+using Infra.Context;
 
 namespace Business.PlayArena
 {

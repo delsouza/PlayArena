@@ -22,6 +22,11 @@ builder.Services.AddTransient<IJogoBusiness, JogoBusiness>();
 builder.Services.AddScoped<IClienteBusiness, ClienteBusiness>();
     
 builder.Services.AddScoped<IClienteDAO, ClienteDAO>();
+builder.Services.AddScoped<IAluguelBusiness, AluguelBusiness>();
+builder.Services.AddScoped<IVendaBusiness, VendaBusiness>();
+builder.Services.AddScoped<IAluguelDAO, AluguelDAO>();
+builder.Services.AddScoped<IVendaDAO, VendaDAO>();
+
 
 builder.Services.AddDbContext<ApplicationDbContext>();
 

@@ -5,6 +5,8 @@
 	var jogo = Model.jogo;
 	var requisitos = Model.requisitos;
 	var imagemJogo = Model.imagemJogo;
+	var aluguel = Model.aluguel;
+	var venda = Model.venda;
 }
 
 <div class="d-flex justify-content-end me-3">
@@ -66,8 +68,11 @@
 							<input type="checkbox" id="myCheckbox">
 							<span class="checkmark"></span>
 						</label>
-
-						<button class="btn-compra-termo" id="botao">Comprar</button>
+						<form method="post">
+							<input type="hidden" name="Id" value="@jogo.Id" />
+							<input type="hidden" name="servico" value="comprar" />
+							<button class="btn-compra-termo" id="botao">Comprar</button>
+						</form>
 					</dialog>
 
 					<dialog class="popup" id="modalAluguelId">
@@ -90,8 +95,11 @@
 							<input type="checkbox" id="myCheckbox">
 							<span class="checkmark"></span>
 						</label>
-
-						<button class="btn-compra-termo" id="botaoAluguel">Alugar</button>
+						<form method="post">
+							<input type="hidden" name="Id" value="@jogo.Id" />
+							<input type="hidden" name="servico" value="alugar" />
+							<button class="btn-compra-termo" id="botaoAluguel">Alugar</button>
+						</form>
 					</dialog>
 				</div>
 			</div>

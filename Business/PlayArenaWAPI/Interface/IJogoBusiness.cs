@@ -10,6 +10,7 @@ namespace Business.PlayArenaWAPI.Interface
     public interface IJogoBusiness
     {
         public List<JogoModel> ListarJogo();
+        public JogoModel EditarJogo(JogoModel jogo, int id);
         public JogoModel ObterJogoPorId(int id);
     }
 }

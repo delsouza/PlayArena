@@ -28,10 +28,8 @@ namespace Business.PlayArenaWAPI
             {
                 var jogoCasting = (JogoModel)jogo;
                 list.Add(jogoCasting);
-
             }
             return list;
-
         }
 
         public JogoModel ObterJogoPorId(int id)
@@ -39,6 +37,20 @@ namespace Business.PlayArenaWAPI
             var jogo = _playArenaDAO.ListarPor(x => x.Id == id).FirstOrDefault();
 
             return (JogoModel)jogo;
+        }
+
+        public JogoModel EditarJogo(JogoModel jogo, int id)
+        {
+            var jogoSelecionado = _playArenaDAO.ListarPor(x => x.Id == id).FirstOrDefault();
+
+            JogoModel jogoEditado = null;
+
+            if (jogoSelecionado != null)
+            {
+                jogoEditado = _playArenaDAO.EditarJogo((JogoModel)jogoSelecionado);
+            }
+
+            return jogoEditado;
         }
     }
 }

@@ -2,6 +2,7 @@
 using Business.PlayArenaWAPI.Interface;
 using DAO.Interface;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Models;
 
 namespace PlayArenaWAPI.Controllers
@@ -13,6 +14,7 @@ namespace PlayArenaWAPI.Controllers
         private readonly IJogoBusiness _jogoBusiness;
 		private readonly IRequisitoSistemaBusiness _requisitoSistemaBusiness;
 		private readonly IImagemJogoBusiness _imagemJogoBusiness;
+
 		public JogoController(IJogoBusiness jogoBusiness, IRequisitoSistemaBusiness requisitoSistemaBusiness, IImagemJogoBusiness imagemJogoBusiness) 
         {
             _jogoBusiness = jogoBusiness;
@@ -52,5 +54,12 @@ namespace PlayArenaWAPI.Controllers
 			return Ok(Imagem);
 		}
 
-	} 
+        [HttpPut]
+        [Route("api/jogo/Salvar")]
+        public ActionResult EditarJogo(JogoModel jogo)
+        {
+            JogoModel jogoEditado = _jogoBusiness.EditarJogo(jogo, jogo.Id);
+            return Ok(jogoEditado);
+        }
+    } 
 }
