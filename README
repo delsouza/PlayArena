@@ -1,1 +1,22 @@
+# PlayArena 🎮
 
+**PlayArena** é uma plataforma de venda e aluguel de jogos, desenvolvida com tecnologias modernas para oferecer uma experiência intuitiva e dinâmica aos usuários
+
+## ✨ Funcionalidades Principais
+
+### 🕹️ Catálogo de Jogos
+- **Categorização inteligente** de jogos via banco de dados.
+- Visualização detalhada com **descrição, preços, imagens e requisitos**.
+- Opções de **comprar** ou **alugar** jogos diretamente na página do produto.
+
+### 🔒 Autenticação de Usuário
+- Sistema de **cadastro e login** seguro.
+
+### 🌓 Modo Escuro
+- Alternância entre temas claro e escuro para melhor experiência visual.
+
+## 🛠️ Tecnologias Utilizadas
+- **Backend**: C#, ASP.NET Core, Razor Pages
+- **Frontend**: HTML, CSS, JavaScript, Bootstrap
+- **Banco de Dados**: SQL Server
+- **Ferramentas**: Entity Framework Core, Git, Visual Studio
