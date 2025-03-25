@@ -1,18 +1,3 @@
-# PlayArena 🎮
+# Relógio Digital
 
-Site de vendas de jogos feito com diversas tecnologias modernas, projetado para oferecer uma experiência prática, dinâmica e intuitiva para os usuários.
-
-## 🛠 Tecnologias Utilizadas
-- C#
-- HTML
-- CSS
-- JavaScript
-- Razor Pages
-- Bootstrap
-
-## 📚 Funcionalidades
-- **Listagem de jogos por categoria**: Os jogos são organizados de acordo com o banco de dados, facilitando a navegação.
-- **Detalhes do jogo**: Ao clicar em um jogo, o usuário pode ver todas as informações detalhadas.
-- **Opções de compra e aluguel**: Além de informações, o usuário pode escolher comprar ou alugar o jogo.
-- **Sistema de cadastro e login**: Usuários podem criar contas, acessar e gerenciar seus perfis.
-- **Modo escuro**: Alternância entre modo claro e escuro para maior conforto visual.
+Este código usa JavaScript para obter a data e hora atual do sistema e atualiza os elementos HTML com as horas, minutos e segundos.
